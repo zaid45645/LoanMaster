@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - LoanMaster</title>
+</head>
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="name">Name</label>
+        <input type="text" name="name" required><br>
+        <label for="age">Age</label>
+        <input type="text" name="age" required><br>
+        <label for="properties">Properties</label>
+        <textarea type="text" name="properties"></textarea><br><br> 
+        <label for="aadhar_document">Upload your Aadhar Card or Photograph:</label>
+        <input type="file" name="aadhar_document" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
