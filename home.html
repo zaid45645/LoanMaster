@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - LoanMaster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 </head>
 <body>
-    <h1>Welcome To LoanMaster</h1>
+    <div >
+        <h3>LoanMaster</h3>
+        <a href="/upload">Apply For A Loan</a>
+        <a href="/data">User Data</a>
+        <a href="/contact">Contact Us</a>
+    </div>
+    <h1>Welcome {{ users["name"] }}</h1>
+    <h2>What would you like to do?</h2>   
+    <h2>Credit Score : {{ credit_score }}</h2>                                                                                                            
 </body>
 </html>

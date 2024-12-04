@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data - LoanMaster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='data.css') }}">
+</head>
+<body>
+    <h1>User Data</h1>
+    {% if user_data %}
+        {% for name, data in user_data.items() %}
+            <div>
+                <h2>{{ name }}</h2>
+                <h3>Loan Age: {{ data.loan_age }}</h3>
+                <h3>Number of Family Members: {{ data.no_fam }}</h3>
+                <h3>Family Income: {{ data.family_income }}</h3>
+                <h3>Credit Score: {{ data.credit_score }}</h3>
+            </div>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No user data available.</p>
+    {% endif %}
+</body>
+</html>

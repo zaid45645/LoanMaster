@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload - LoanMaster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
 </head>
 <body>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <label for="name">Name</label>
-        <input type="text" name="name" required><br>
+        <input type="text" name="name" required><br><br>
         <label for="age">Age</label>
-        <input type="text" name="age" required><br>
+        <input type="text" name="age" required><br><br>
         <label for="properties">Properties</label>
-        <textarea type="text" name="properties"></textarea><br><br> 
-        <label for="aadhar_document">Upload your Aadhar Card or Photograph:</label>
+        <textarea type="text" name="properties" required></textarea><br><br> 
+        <label for="loan_money">Loan Money</label>
+        <input type="number" name="loan_money" required><br><br> 
+        <label for="loan_type">Loan Type</label>
+        <input type="text" name="loan_type" required><br><br> 
+        <label for="no_fam">No Of Family Members</label>
+        <input type="number" name="no_fam" required><br><br> 
+        <label for="inc_fam">Income of the Family</label>
+        <input type="number" name="inc_fam" required><br><br> 
+        <label for="aadhar_document">Upload your Aadhar Card or Photograph:</label><br><br>
         <input type="file" name="aadhar_document" accept="image/*" required>
         <button type="submit">Upload</button>
     </form>
