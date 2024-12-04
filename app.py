@@ -7,7 +7,7 @@ app.secret_key = 'your_secret_key'
 # User credentials
 users = {
     "name": "Zaid",
-    "pass": "12345678"
+    "pass": "12345678",
 }
 
 # In-memory storage for user data
@@ -55,17 +55,17 @@ def upload():
         if family_income < 1000:
             credit_score += 0
         elif family_income <= 10000:
-            credit_score += 10
+            credit_score += 200
         elif family_income <= 30000:
-            credit_score += 20
+            credit_score += 300
         elif family_income <= 50000:
-            credit_score += 30
+            credit_score += 400
         elif family_income <= 70000:
-            credit_score += 40
+            credit_score += 500
         elif family_income <= 90000:
-            credit_score += 50
+            credit_score += 600
         else:
-            credit_score += 60
+            credit_score += 700
 
         # Check for file upload
         if 'aadhar_document' not in request.files:
@@ -101,6 +101,20 @@ def contact():
 @app.route("/data")
 def data():
     return render_template("data.html", user_data=user_data)
+
+@app.route("/credit_check")
+def credit_check():
+    global credit_score
+    if credit_score <= 300:
+        cred_mess =  "Credit Score Too Low"
+    elif credit_score >= 300 and credit_score <= 500:
+        cred_mess= "Credit Score is Low"
+    elif credit_score > 500 and credit_score < 700:
+        cred_mess="Credit Score is Average"
+    elif credit_score >= 700:
+        cred_mess="Credit Score is Excellent"
+
+    return render_template("credits.html", credit_score=credit_score, cred_mess=cred_mess)
 
 if __name__ == "__main__":
     if not os.path.exists('uploads'):
