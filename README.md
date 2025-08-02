@@ -4,4 +4,5 @@ get their loaning done. The idea was that LoanMaster would partner with small ba
 hence help them get their loan. It only asks for thier aadhar id and some information on their family to determine their credit score and
 if their loan can be approved.
 
-Submission for E-Summit DSCE 2025
+Submission for E-Summit DSCE 2024
+
